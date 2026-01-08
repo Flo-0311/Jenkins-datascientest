@@ -6,4 +6,4 @@ from fastapi import FastAPI
 app = FastAPI()
 @app.get("/")
 def read_root():
-    return {"Hello": "We Love Datascientest and i love Jenkins and AWS!!"}
+    return {"Hello": "We Love Datascientest and i love Jenkins,Gitlab and AWS!!"}
