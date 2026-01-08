@@ -41,7 +41,7 @@ stages {
         stage('Docker Push'){ //we pass the built image to our docker hub account
             environment
             {
-                DOCKER_PASS = credentials("docker") // we retrieve docker password from secret text called docker saved on jenkins
+                DOCKER_PASS = credentials("DOCKER_HUB_PASS") // we retrieve docker password from secret text called docker saved on jenkins
             }
 
             steps {
