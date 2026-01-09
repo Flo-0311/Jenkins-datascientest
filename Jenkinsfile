@@ -127,4 +127,14 @@ stage('Deploiement en staging'){
         }
 
 }
+
+    post {
+        success {
+            slackSend message: "✅ Jenkins Build ERFOLGREICH"
+        }
+        failure {
+            slackSend message: "❌ Jenkins Build FEHLGESCHLAGEN"
+        }
+    }
+
 }
