@@ -6,4 +6,4 @@ from fastapi import FastAPI
 app = FastAPI()
 @app.get("/")
 def read_root():
-    return {"Hello": "We Love Datascientest and Linux!!"}
+    return {"Hello": "I complete now all parts from Jenkins Modul"}
