@@ -128,13 +128,24 @@ stage('Deploiement en staging'){
 
 }
 
-    post {
-        success {
-            slackSend message: "✅ Jenkins Build ERFOLGREICH"
-        }
-        failure {
-            slackSend message: "❌ Jenkins Build FEHLGESCHLAGEN"
-        }
+   post {
+    // ..
+    failure {
+        echo "This will run if the job failed"
+        mail to: "florian.munkelt@outlook.de",
+             subject: "${env.JOB_NAME} - Build # ${env.BUILD_ID} has failed",
+             body: "For more info on the pipeline failure, check out the console output at ${env.BUILD_URL}"
     }
+
+    success {
+        echo "This will run if the job success"
+        mail to: "florian.munkelt@outlook.de",
+            subject: "${env.JOB_NAME} - Build # ${env.BUILD_ID} has success",
+            body: "For more info on the pipeline , check out the console output at ${env.BUILD_URL}"
+    }
+
+
+    // ..
+}
 
 }
